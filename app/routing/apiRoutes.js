@@ -38,10 +38,14 @@ module.exports = function(app) {
                 minDiff = totalDiff
             }
         }
+        //after the match is found, the app will then push the data from the form to the friends list
+        friendList.push(newFriend);
+        //Sends the browser the closest match 
+        res.json(friends[BFFIndex]);
 
 
     });
     
 
 
-}
+};
