@@ -44,7 +44,7 @@
 
                 <!-- Survey Questions -->
 
-                <form>
+                <form id="form">
                     <div class="form-row align-items-center" id="Q1">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 1</label>
@@ -208,29 +208,69 @@
                   <div>
                     <i class="material-icons prefix">favorite</i><button class="btn btn-outline-danger btn-lg"  type="submit" name="SUBMIT" id="submit">Submit</button><i class="material-icons right">favorite</i>
                   </div>
-
-
-
-
-
-
-
-
-
-
-
-
                 </form>
               </div>
             
           </div>
+
+          <div id="BFFM" class= "modal fade" role="dialog">
+            <div class="modal-dialog">
+              
+              <div class="modal-content">
+                
+                <div class="modal-header">
+                  
+                  <div class="modal-title">Your New Best Friend Is...</div>
+
+                </div>
+
+                <div class="modal-body">
+                  <h2 id="BFF"></h2>
+                  <img id="bffPhoto" src="#">
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        
       </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <a href="/app/data/friends.js">Take a look at our whole friends list!</a>
+            <br><br>
+            <a href="https://github.com/EricC44/FriendFinder">GitHub Repo</a>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    var form = document.getElementById('form');
+    document.getElementById('sumbit').addEventListener("click", function () {
+      
+      event.preventDefault();
+      //Making sure the form is valid before submitting
+      var valid = true;
+      
+      
+      
+      
+      
+      
+      
+      form.submit()
+    });
+    
+    </script>
   </body>
 </html>
