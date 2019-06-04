@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
+
     <title>Friend Finder</title>
   </head>
   <body>
@@ -51,7 +52,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">You love to go to parties and are the life of the party.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -67,7 +68,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">You like to initiate the conversation with anybody you meet.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -83,7 +84,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I'd rather be doing outdoor activities.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -99,7 +100,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I enjoy sitting in a quiet setting and having a cup of coffee.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -115,7 +116,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I love to try new things.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -131,7 +132,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I don't have a lot of time to do things.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -147,7 +148,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I find myself to be a very organized person.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -163,7 +164,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I'd do anything for someone I care about</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -179,7 +180,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I can get easily bored with things.</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -195,7 +196,7 @@
                         <div class="divider"></div>
                         <label class="mr-sm-2" for="inlineFormCustomSelect">I'm not picky when it comes to a type of date</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                          <option selected>Choose...</option>
+                          <option selected id="disabled">Choose...</option>
                           <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -251,24 +252,28 @@
 
     <!-- Optional JavaScript -->
     <!-- Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-    var form = document.getElementById('form');
-    document.getElementById('sumbit').addEventListener("click", function () {
-      
-      event.preventDefault();
-      //Making sure the form is valid before submitting
-      var valid = true;
-      
-      
-      
-      
-      
-      
-      
-      form.submit()
+    $(document).ready(function() {
+    
+      $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        var valid = true;
+
+        if($("#userName").val() === "" || $("#userPhoto").val() === "") {
+          
+          valid = false 
+        }
+        else if($("#Q1").val() === "disabled" || $("#Q2").val() === "disabled" || $("#Q3").val() === "disabled" || $("#Q4").val() === "disabled" || $("#Q5").val() === "disabled" || $("#Q6").val() === "disabled" || $("#Q7").val() === "disabled" || $("#Q8").val() === "disabled" || $("#Q9").val() === "disabled" || $("#Q10").val() === "disabled") {
+
+          valid = false
+        }
+      });
+    
     });
     
     </script>
