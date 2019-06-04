@@ -32,6 +32,11 @@ module.exports = function(app) {
                 var diff = Math.abs(newFriend.scores[n] - friendList[i].scores[n]);
                 totalDiff += diff;
             }
+            //If there is a new minimum number it will change the minDiff to the total diff
+            if(totalDiff < minDiff) {
+                BFFIndex = i;
+                minDiff = totalDiff
+            }
         }
 
 
