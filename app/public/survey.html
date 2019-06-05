@@ -207,7 +207,7 @@
                     </div>
 
                   <div>
-                    <i class="material-icons prefix">favorite</i><button class="btn btn-outline-danger btn-lg"  type="submit" name="SUBMIT" id="submit">Submit</button><i class="material-icons right">favorite</i>
+                    <i class="material-icons prefix">favorite</i><button class="btn btn-outline-danger btn-lg"  type="submit" name="SUBMIT" id="submitBtn">Submit</button><i class="material-icons right">favorite</i>
                   </div>
                 </form>
               </div>
@@ -259,11 +259,11 @@
     <script type="text/javascript">
     $(document).ready(function() {
     
-      $("#submit").on("click", function(event) {
+      $("#submitBtn").on("click", function(event) {
         event.preventDefault();
 
         var valid = true;
-
+        //This is to make sure that the values arent empty
         if($("#userName").val() === "" || $("#userPhoto").val() === "") {
           
           valid = false 
@@ -272,6 +272,38 @@
 
           valid = false
         }
+        //If everything is filled out, then the app will then get the answers and then adds it to the friendslist
+        if(valid = true) {
+
+          var newFriend = {
+            name: $("#userName").val().trim(),
+            photo: $("#userPhoto").val().trim(),
+            scores: [
+            $("#Q1").val(),
+            $("#Q2").val(),
+            $("#Q3").val(),
+            $("#Q4").val(),
+            $("#Q5").val(),
+            $("#Q6").val(),
+            $("#Q7").val(),
+            $("#Q8").val(),
+            $("#Q9").val(),
+            $("#Q10").val(),
+            ]
+          };
+
+          var URL = window.location.origin;
+          //Ajax call to for response
+          $.post(URL + "/api/friends", newFriend, function(data) {
+				  $("#BFF").text(data.name);
+				  $("#bffPhoto").attr("src", data.photo);
+				  $("#BFFM").modal("toggle");
+          });
+        }
+        else {
+          alert('Please finish your form before submitting!')
+        }
+      
       });
     
     });
