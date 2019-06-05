@@ -244,7 +244,7 @@
 
     <footer>
         <div class="container">
-            <a href="/app/data/friends.js">Take a look at our whole friends list!</a>
+            <a href="/api/friends">Take a look at our whole friends list!</a>
             <br><br>
             <a href="https://github.com/EricC44/FriendFinder">GitHub Repo</a>
         </div>
@@ -294,15 +294,15 @@
 
           var URL = window.location.origin;
           //Ajax call to for response
-          $.post(URL + "/api/friends", newFriend, function(data) {
-				  $("#BFF").text(data.name);
-				  $("#bffPhoto").attr("src", data.photo);
-				  $("#BFFM").modal("toggle");
+          $.post(currentURL + "/api/friends", newFriend, function(data) {
+              //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+              $("#BFF").text(data.name);
+              $("#bffPhoto").attr("src", data.profilePic);
           });
-        }
-        else {
+          else {
           alert('Please finish your form before submitting!')
-        }
+          }
+        };
       
       });
     
