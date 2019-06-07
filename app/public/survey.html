@@ -12,7 +12,8 @@
     <!-- For Materialize -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 
 
     <title>Friend Finder</title>
@@ -257,60 +258,106 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-    $(document).ready(function() {
-    
-      $("#submitBtn").on("click", function(event) {
-        event.preventDefault();
-
-        var valid = true;
-        //This is to make sure that the values arent empty
-        if($("#userName").val() === "" || $("#userPhoto").val() === "") {
-          
-          valid = false 
-        }
-        else if($("#Q1").val() === "disabled" || $("#Q2").val() === "disabled" || $("#Q3").val() === "disabled" || $("#Q4").val() === "disabled" || $("#Q5").val() === "disabled" || $("#Q6").val() === "disabled" || $("#Q7").val() === "disabled" || $("#Q8").val() === "disabled" || $("#Q9").val() === "disabled" || $("#Q10").val() === "disabled") {
-
-          valid = false
-        }
-        //If everything is filled out, then the app will then get the answers and then adds it to the friendslist
-        if(valid = true) {
-
-          var newFriend = {
-            name: $("#userName").val().trim(),
-            photo: $("#userPhoto").val().trim(),
-            scores: [
-            $("#Q1").val(),
-            $("#Q2").val(),
-            $("#Q3").val(),
-            $("#Q4").val(),
-            $("#Q5").val(),
-            $("#Q6").val(),
-            $("#Q7").val(),
-            $("#Q8").val(),
-            $("#Q9").val(),
-            $("#Q10").val(),
-            ]
-          };
-
-          var URL = window.location.origin;
-          //Ajax call to for response
-          $.post(URL + "/api/friends", newFriend, function(data) {
-              //Grab the result from the AJAX post so that the best match's name and photo are displayed.
-              $("#BFF").text(data.name);
-              $("#bffPhoto").attr("src", data.profilePic);
-              $("#BFFM").modal("toggle");
-          });
-          } else {
-           alert('Please finish your form before submitting!')
-           }
-        });
+    <script src="text/javascript">
+    document.querySelector("#submitBtn").addEventListener("click", function(event) {
       
-      });
+      event.preventDefault()
+      var valid = true
+
+      //This is to make sure that the values arent empty
+      if(document.querySelector("#userName").value === "" || document.querySelector("#userPhoto").value === "") {
+          
+        valid = false 
+      }
+      else if(document.querySelector("#Q1").value === "disabled" || document.querySelector("#Q2").value === "disabled" || document.querySelector("#Q3").value === "disabled" || document.querySelector("#Q4").value === "disabled" || document.querySelector("#Q5").value === "disabled" || document.querySelector("#Q6").value === "disabled" || document.querySelector("#Q7").value === "disabled" || document.querySelector("#Q8").value === "disabled" || document.querySelector("#Q9").value === "disabled" || document.querySelector("#Q10").value === "disabled") {
+
+        valid = false
+      }
+
+      if(valid = true) {
+
+        var newFriend = {
+          name: $("#userName").val().trim(),
+          photo: $("#userPhoto").val().trim(),
+          scores: [
+          document.querySelector("#Q1").value.trim(),
+          document.querySelector("#Q2").value.trim(),
+          document.querySelector("#Q3").value.trim(),
+          document.querySelector("#Q4").value.trim(),
+          document.querySelector("#Q5").value.trim(),
+          document.querySelector("#Q6").value.trim(),
+          document.querySelector("#Q7").value.trim(),
+          document.querySelector("#Q8").value.trim(),
+          document.querySelector("#Q9").value.trim(),
+          document.querySelector("#Q10").value.trim(),
+          ]
+        };
+
+        console.log(newFriend);
+
+        
+      } else {
+        alert('Please finish your form before submitting!')
+      }
+
+
+    });
+    
+    
+    </script>
+    
+    // $(document).ready(function() {
+    
+    //   $("#submitBtn").on("click", function(event) {
+    //     event.preventDefault();
+
+    //     var valid = true;
+    //     //This is to make sure that the values arent empty
+    //     if($("#userName").val() === "" || $("#userPhoto").val() === "") {
+          
+    //       valid = false 
+    //     }
+    //     else if($("#Q1").val() === "disabled" || $("#Q2").val() === "disabled" || $("#Q3").val() === "disabled" || $("#Q4").val() === "disabled" || $("#Q5").val() === "disabled" || $("#Q6").val() === "disabled" || $("#Q7").val() === "disabled" || $("#Q8").val() === "disabled" || $("#Q9").val() === "disabled" || $("#Q10").val() === "disabled") {
+
+    //       valid = false
+    //     }
+    //     //If everything is filled out, then the app will then get the answers and then adds it to the friendslist
+    //     if(valid = true) {
+
+    //       var newFriend = {
+    //         name: $("#userName").val().trim(),
+    //         photo: $("#userPhoto").val().trim(),
+    //         scores: [
+    //         $("#Q1").val(),
+    //         $("#Q2").val(),
+    //         $("#Q3").val(),
+    //         $("#Q4").val(),
+    //         $("#Q5").val(),
+    //         $("#Q6").val(),
+    //         $("#Q7").val(),
+    //         $("#Q8").val(),
+    //         $("#Q9").val(),
+    //         $("#Q10").val(),
+    //         ]
+    //       };
+
+    //       var URL = window.location.origin;
+    //       //Ajax call to for response
+    //       $.post(URL + "/api/friends", newFriend, function(data) {
+    //           //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+    //           $("#BFF").text(data.name);
+    //           $("#bffPhoto").attr("src", data.profilePic);
+    //           $("#BFFM").modal("toggle");
+    //       });
+    //       } else {
+    //        alert('Please finish your form before submitting!')
+    //        }
+    //     });
+      
+    //   });
     
     //});
     
-    </script>
+    
   </body>
 </html>
