@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Google Font  -->
@@ -255,7 +257,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="text/javascript">
+    <script type="text/javascript">
     document.querySelector("#submitBtn").addEventListener("click", function(event) {
       
       event.preventDefault()
@@ -274,11 +276,24 @@
       
       var surveyInput = document.querySelectorAll('.formSurvey');
 
+      var userName = document.querySelector('#name').value.trim();
+      var userPhoto = document.querySelector('#photo').value.trim();
+      var Q1 = document.querySelector('#Q1').value.trim();
+      var Q2 = document.querySelector('#Q2').value.trim();
+      var Q3 = document.querySelector('#Q3').value.trim();
+      var Q4 = document.querySelector('#Q4').value.trim();
+      var Q5 = document.querySelector('#Q5').value.trim();
+      var Q6 = document.querySelector('#Q6').value.trim();
+      var Q7 = document.querySelector('#Q7').value.trim();
+      var Q8 = document.querySelector('#Q8').value.trim();
+      var Q9 = document.querySelector('#Q9').value.trim();
+      var Q10 = document.querySelector('#Q10').value.trim();
+
         var newFriend = {
           name: document.querySelector("#name").value.trim(),
-          photo: document.querySelector("#photo").value.trim(),
+          photo: document.querySelector('#photo').value.trim(),
           scores: [
-          document.querySelector("#Q1").value.trim(),
+          document.querySelector('#Q1').value.trim(),
           document.querySelector("#Q2").value.trim(),
           document.querySelector("#Q3").value.trim(),
           document.querySelector("#Q4").value.trim(),
