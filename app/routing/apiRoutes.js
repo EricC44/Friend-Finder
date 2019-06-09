@@ -1,7 +1,7 @@
 // Required Dependencies
 var path = require('path')
 // From our friendsList made earlier
-var friendList = require('../data/friends')
+var friendList = require('../data/friends.js')
 // Exporting API routes
 module.exports = function (app) {
   console.log(app)
