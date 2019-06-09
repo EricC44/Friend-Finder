@@ -12,9 +12,7 @@
     <!-- For Materialize -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-
+    
 
     <title>Friend Finder</title>
   </head>
@@ -39,16 +37,16 @@
                 <!-- Input fields for data -->
                 <h4>Your Name(Required)</h4>
                 <i class="material-icons prefix">account_box</i>
-                <input type="text" class="validate" placeholder="Name Goes Here" id="userName">
+                <input type="text" class="validate" placeholder="Name Goes Here" id="name" class="formInput">
 
                 <h4>Your Photo(Required)</h4>
                 <i class="material-icons prefix">video_label</i>
-                <input type="text" class="validate" placeholder="Photo Goes Here" id="userPhoto">
+                <input type="text" class="validate" placeholder="Photo Goes Here" id="photo" class="formInput">
 
                 <!-- Survey Questions -->
 
                 <form id="form">
-                    <div class="form-row align-items-center" id="Q1">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 1</label>
                         <div class="divider"></div>
@@ -64,7 +62,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q2">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 2</label>
                         <div class="divider"></div>
@@ -80,7 +78,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q3">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 3</label>
                         <div class="divider"></div>
@@ -96,7 +94,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q4">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 4</label>
                         <div class="divider"></div>
@@ -112,7 +110,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q5">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 5</label>
                         <div class="divider"></div>
@@ -128,7 +126,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q6">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 6</label>
                         <div class="divider"></div>
@@ -144,7 +142,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q7">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 7</label>
                         <div class="divider"></div>
@@ -160,7 +158,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q8">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 8</label>
                         <div class="divider"></div>
@@ -176,7 +174,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q9">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 9</label>
                         <div class="divider"></div>
@@ -192,7 +190,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" id="Q10">
+                    <div class="form-row align-items-center" class="formSurvey">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 10</label>
                         <div class="divider"></div>
@@ -254,31 +252,31 @@
 
     <!-- Optional JavaScript -->
     <!-- Popper.js, then Bootstrap JS -->
-    <!-- <script src="jquery-3.4.0.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="text/javascript">
     document.querySelector("#submitBtn").addEventListener("click", function(event) {
       
       event.preventDefault()
-      var valid = true
+      // var valid = true
 
-      //This is to make sure that the values arent empty
-      if(document.querySelector("#userName").value === "" || document.querySelector("#userPhoto").value === "") {
+      // //This is to make sure that the values arent empty
+      // if(document.querySelector("#userName").value === "" || document.querySelector("#userPhoto").value === "") {
           
-        valid = false 
-      }
-      else if(document.querySelector("#Q1").value === "disabled" || document.querySelector("#Q2").value === "disabled" || document.querySelector("#Q3").value === "disabled" || document.querySelector("#Q4").value === "disabled" || document.querySelector("#Q5").value === "disabled" || document.querySelector("#Q6").value === "disabled" || document.querySelector("#Q7").value === "disabled" || document.querySelector("#Q8").value === "disabled" || document.querySelector("#Q9").value === "disabled" || document.querySelector("#Q10").value === "disabled") {
+      //   valid = false 
+      // }
+      // else if(document.querySelector("#Q1").value === "disabled" || document.querySelector("#Q2").value === "disabled" || document.querySelector("#Q3").value === "disabled" || document.querySelector("#Q4").value === "disabled" || document.querySelector("#Q5").value === "disabled" || document.querySelector("#Q6").value === "disabled" || document.querySelector("#Q7").value === "disabled" || document.querySelector("#Q8").value === "disabled" || document.querySelector("#Q9").value === "disabled" || document.querySelector("#Q10").value === "disabled") {
 
-        valid = false
-      }
-
-      if(valid = true) {
+      //   valid = false
+      // }
+      var formInput = document.querySelectorAll('.formInput');
+      
+      var surveyInput = document.querySelectorAll('.formSurvey');
 
         var newFriend = {
-          name: $("#userName").val().trim(),
-          photo: $("#userPhoto").val().trim(),
+          name: document.querySelector("#name").value.trim(),
+          photo: document.querySelector("#photo").value.trim(),
           scores: [
           document.querySelector("#Q1").value.trim(),
           document.querySelector("#Q2").value.trim(),
@@ -292,71 +290,38 @@
           document.querySelector("#Q10").value.trim(),
           ]
         };
+          console.log(newFriend);
 
-        console.log(newFriend);
-
-        
-      } else {
-        alert('Please finish your form before submitting!')
+        function validateForm() {
+          
+          var validating = true;  
+            // This for loop checkes the formInput for empty space, if empty will change validation to false
+            for (let i = 0; i < formInput.length; i++) {
+            // console.log(`checking the value of form-control formInput[${i}] data: ${formInput[i].value}`)
+            if(formInput[i].value === "") {
+                validating = false;
+            }
+          }
+            // This for loop checks the surveyInput for empty fields, if choice is disabled changed in the options will also change the validation to false
+            for (let j = 0;  j < surveyInput.length; j++) {
+            // console.log(`checking the value of form-control surveyInput[${j}] data: ${surveyInput[j].value}`)
+            if(surveyInput[j].value === "disabled") {
+                validating = false;
+            }
+          }
+        return validating;
       }
 
+    });    
+      
 
-    });
+
+    
     
     
     </script>
     
-    // $(document).ready(function() {
     
-    //   $("#submitBtn").on("click", function(event) {
-    //     event.preventDefault();
-
-    //     var valid = true;
-    //     //This is to make sure that the values arent empty
-    //     if($("#userName").val() === "" || $("#userPhoto").val() === "") {
-          
-    //       valid = false 
-    //     }
-    //     else if($("#Q1").val() === "disabled" || $("#Q2").val() === "disabled" || $("#Q3").val() === "disabled" || $("#Q4").val() === "disabled" || $("#Q5").val() === "disabled" || $("#Q6").val() === "disabled" || $("#Q7").val() === "disabled" || $("#Q8").val() === "disabled" || $("#Q9").val() === "disabled" || $("#Q10").val() === "disabled") {
-
-    //       valid = false
-    //     }
-    //     //If everything is filled out, then the app will then get the answers and then adds it to the friendslist
-    //     if(valid = true) {
-
-    //       var newFriend = {
-    //         name: $("#userName").val().trim(),
-    //         photo: $("#userPhoto").val().trim(),
-    //         scores: [
-    //         $("#Q1").val(),
-    //         $("#Q2").val(),
-    //         $("#Q3").val(),
-    //         $("#Q4").val(),
-    //         $("#Q5").val(),
-    //         $("#Q6").val(),
-    //         $("#Q7").val(),
-    //         $("#Q8").val(),
-    //         $("#Q9").val(),
-    //         $("#Q10").val(),
-    //         ]
-    //       };
-
-    //       var URL = window.location.origin;
-    //       //Ajax call to for response
-    //       $.post(URL + "/api/friends", newFriend, function(data) {
-    //           //Grab the result from the AJAX post so that the best match's name and photo are displayed.
-    //           $("#BFF").text(data.name);
-    //           $("#bffPhoto").attr("src", data.profilePic);
-    //           $("#BFFM").modal("toggle");
-    //       });
-    //       } else {
-    //        alert('Please finish your form before submitting!')
-    //        }
-    //     });
-      
-    //   });
-    
-    //});
     
     
   </body>
