@@ -48,7 +48,7 @@
                 <!-- Survey Questions -->
 
                 <form id="form">
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q1">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 1</label>
                         <div class="divider"></div>
@@ -64,7 +64,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q2">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 2</label>
                         <div class="divider"></div>
@@ -80,7 +80,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q3">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 3</label>
                         <div class="divider"></div>
@@ -96,7 +96,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q4">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 4</label>
                         <div class="divider"></div>
@@ -112,7 +112,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q5">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 5</label>
                         <div class="divider"></div>
@@ -128,7 +128,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q6">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 6</label>
                         <div class="divider"></div>
@@ -144,7 +144,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q7">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 7</label>
                         <div class="divider"></div>
@@ -160,7 +160,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q8">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 8</label>
                         <div class="divider"></div>
@@ -176,7 +176,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q9">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 9</label>
                         <div class="divider"></div>
@@ -192,7 +192,7 @@
                       </div>
                     </div>
 
-                    <div class="form-row align-items-center" class="formSurvey">
+                    <div class="form-row align-items-center" class="formSurvey" id="Q10">
                       <div class="col-auto my-1">
                         <label class="mr-sm-2" for="inlineFormCustomSelect">Question 10</label>
                         <div class="divider"></div>
@@ -257,7 +257,60 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
     <script type="text/javascript">
+	$("#submitBtn").on("click", function(event) {
+		event.preventDefault();
+		// Form validation
+		var valid = true;
+		if($("#name").val() === "" || $("#photo").val() === "") {
+			valid = false;
+		} else if($("#Q1").val() === "disabled" || $("#Q2").val() === "disabled" || $("#Q3").val() === "disabled" || $("#Q4").val() === "disabled" || $("#Q5").val() === "disabled" || $("#Q6").val() === "disabled" || $("#Q7").val() === "disabled" || $("#Q8").val() === "disabled" || $("#Q9").val() === "disabled" || $("#Q10").val() === "disabled") {
+			valid = false;
+		}
+		if(valid === true) {
+			var newUser = {
+				name: $("#name").val().trim(),
+				photo: $("#photo").val().trim(),
+				scores: [
+					$("#question1").val(),
+					$("#question2").val(),
+					$("#question3").val(),
+					$("#question4").val(),
+					$("#question5").val(),
+					$("#question6").val(),
+					$("#question7").val(),
+					$("#question8").val(),
+					$("#question9").val(),
+					$("#question10").val()
+				]
+			};
+			var currentURL = window.location.origin;
+			// Ajax call for receiving response after POST req
+			$.post(currentURL + "/api/friends", newUser, function(data) {
+				$("#bestFriend").text(data.name);
+				$("#bestFriendPhoto").attr("src", data.photo);
+				$("#bestFriendModal").modal("toggle");
+			});
+		} else {
+			// If a required field is missing, show alert
+			alert("Survey is incomplete!");
+		}
+	});
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     document.querySelector("#submitBtn").addEventListener("click", function(event) {
       
       event.preventDefault()
