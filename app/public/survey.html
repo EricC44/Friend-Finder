@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -269,29 +269,45 @@
 			valid = false;
 		}
 		if(valid === true) {
-			var newUser = {
+			var User = {
 				name: $("#name").val().trim(),
 				photo: $("#photo").val().trim(),
 				scores: [
-					$("#question1").val(),
-					$("#question2").val(),
-					$("#question3").val(),
-					$("#question4").val(),
-					$("#question5").val(),
-					$("#question6").val(),
-					$("#question7").val(),
-					$("#question8").val(),
-					$("#question9").val(),
-					$("#question10").val()
+					$("#Q1").val(),
+					$("#Q2").val(),
+					$("#Q3").val(),
+					$("#Q4").val(),
+					$("#Q5").val(),
+					$("#Q6").val(),
+					$("#Q7").val(),
+					$("#Q8").val(),
+					$("#Q9").val(),
+					$("#Q10").val()
 				]
 			};
-			var currentURL = window.location.origin;
-			// Ajax call for receiving response after POST req
-			$.post(currentURL + "/api/friends", newUser, function(data) {
-				$("#bestFriend").text(data.name);
-				$("#bestFriendPhoto").attr("src", data.photo);
-				$("#bestFriendModal").modal("toggle");
-			});
+			// POST to api/friends.
+		  fetch("/api/friends", {
+			  method: "POST",
+			  body: JSON.stringify(User),
+			  headers: {
+			    'Content-Type': 'application/json'
+	
+		    }
+		  })
+			.then(response => response.json())
+			.then(data => {
+	
+			// Update the match modal with the correct name & image
+			$( "#BFF" ).html("<h1>" + data.name + "<h1>");
+			$( "#bffPhoto" ).attr( "src", data.photo );
+			// Show the match modal
+			$( "#BFFM" ).modal( "toggle" );
+			})
+
+
+         // Clear the form when submitting
+		 $("#name").val('');
+		 $("#image").val('');
 		} else {
 			// If a required field is missing, show alert
 			alert("Survey is incomplete!");
